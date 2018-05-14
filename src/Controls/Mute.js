@@ -51,12 +51,12 @@ export const Styled = styles((styles, theme) => ({
     backgroundColor: styles.Mute.buttonColor || 'transparent'
   },
   container: {
-    backgroundColor: styles.Mute.backgroundColor || theme.control.backgroundColor
+    backgroundColor: (styles.Mute && styles.Mute.backgroundColor) || theme.control.backgroundColor
   },
-  underlayColor: styles.Mute.underlayColor || theme.control.underlayColor,
+  underlayColor: (styles.Mute && styles.Mute.underlayColor) || theme.control.underlayColor,
   icon: {
-    size: styles.Mute.size || theme.control.size,
-    color: styles.Mute.iconColor || theme.control.iconColor
+    size: (styes.Mute && styles.Mute.size) || theme.control.size,
+    color: (styls.Mute && styles.Mute.iconColor) || theme.control.iconColor
   }
 }))(Connected)
 

@@ -59,7 +59,7 @@ const Layout = layout({
 
 const Styled = styles((styles, theme) => ({
   container: {
-    backgroundColor: styles.Footer.backgroundColor || 'transparent',
+    backgroundColor: (styles.Footer && styles.Footer.backgroundColor) || 'transparent',
     flexDirection: 'row',
     padding: 5,
     justifyContent: 'space-between',

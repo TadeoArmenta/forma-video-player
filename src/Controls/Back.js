@@ -60,15 +60,15 @@ export const Styled = styles((styles, theme) => ({
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: styles.Back.buttonColor || 'transparent'
+    backgroundColor: (styles.Back && styles.Back.buttonColor) || 'transparent'
   },
   container: {
-    backgroundColor: styles.Back.backgroundColor || theme.control.backgroundColor
+    backgroundColor: (styles.Back && styles.Back.backgroundColor) || theme.control.backgroundColor
   },
-  underlayColor: styles.Back.underlayColor || theme.control.underlayColor,
+  underlayColor: (styles.Back && styles.Back.underlayColor) || theme.control.underlayColor,
   icon: {
-    size: styles.Back.size || theme.control.size,
-    color: styles.Back.iconColor || theme.control.iconColor
+    size: (styles.Back && styles.Back.size) || theme.control.size,
+    color: (styles.Back && styles.Back.iconColor) || theme.control.iconColor
   }
 }))(Connected)
 

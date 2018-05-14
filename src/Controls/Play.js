@@ -90,18 +90,18 @@ export const Styled = styles((styles, theme) => ({
   button: {
     padding: 5,
     margin: 5,
-    backgroundColor: styles.Play.buttonColor || 'transparent'
+    backgroundColor: (styles.Play && styles.Play.buttonColor) || 'transparent'
   },
   container: {
-    backgroundColor: styles.Play.backgroundColor || theme.control.backgroundColor,
+    backgroundColor: (styles.Play && styles.Play.backgroundColor) || theme.control.backgroundColor,
     paddingTop: 30,
     justifyContent: 'center',
     alignItems: 'center'
   },
-  underlayColor: styles.Play.underlayColor || theme.control.underlayColor,
+  underlayColor: (styles.Play && styles.Play.underlayColor) || theme.control.underlayColor,
   icon: {
-    size: styles.Play.size || 50,
-    color: styles.Play.iconColor || theme.control.iconColor
+    size: (styles.Play && styles.Play.size) || 50,
+    color: (styles.Play && styles.Play.iconColor) || theme.control.iconColor
   }
 }))(Connected)
 

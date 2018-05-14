@@ -34,8 +34,8 @@ export const Styled = styles((styles, theme) => ({
     paddingHorizontal: 5
   },
   text: {
-    fontSize: styles.Title.fontSize || 20,
-    color: styles.Title.textColor || theme.control.textColor
+    fontSize: (styles.Title && styles.Title.fontSize) || 20,
+    color: (styles.Title && styles.Title.textColor) || theme.control.textColor
   }
 }))(Connected)
 
