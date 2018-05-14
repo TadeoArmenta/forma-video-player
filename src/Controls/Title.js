@@ -30,7 +30,7 @@ export const Connected = connectVideo(['name'])(Title)
 
 export const Styled = styles((styles, theme) => ({
   container: {
-    backgroundColor: styles.Title.backgroundColor || theme.control.backgroundColor,
+    backgroundColor: (styles.Title && styles.Title.backgroundColor) || theme.control.backgroundColor,
     paddingHorizontal: 5
   },
   text: {
