@@ -64,10 +64,10 @@ const Styled = styles((styles, theme) => ({
     padding: 5,
     justifyContent: 'space-between',
     position: 'absolute',
-    height: 50,
-    right: 0,
-    left: 0,
-    bottom: 0
+    height: (styles.Footer && styles.Footer.height) || 50,
+    right: (styles.Footer && styles.Footer.right) || 0,
+    left: (styles.Footer && styles.Footer.left) || 0,
+    bottom: (styles.Footer && styles.Footer.bottom) || 0
   }
 }))(Layout)
 
