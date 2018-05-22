@@ -63,7 +63,7 @@ class Play extends Component {
 
   render() {
     const {paused, ended, buffering} = this.props.player
-    const {container, button, underlayColor, icon} = this.props.styles
+    const {container, button, underlayColor, icon, bufferingColor} = this.props.styles
 
 
     return (
@@ -72,7 +72,7 @@ class Play extends Component {
           {this.renderIcon()}
         </CircularButton>
         <View style={{height: 30}}>
-          <Spinner isVisible={buffering} size={30} type='ThreeBounce' color={styles.Play && styles.Play.bufferingColor || '#ffffff'} />
+          <Spinner isVisible={buffering} size={30} type='ThreeBounce' color={bufferingColor} />
         </View>
       </View>
     )
@@ -99,6 +99,7 @@ export const Styled = styles((styles, theme) => ({
     alignItems: 'center'
   },
   underlayColor: (styles.Play && styles.Play.underlayColor) || theme.control.underlayColor,
+  bufferingColor: (styles.Play && styles.Play.bufferingColor) || '#ffffff',
   icon: {
     size: (styles.Play && styles.Play.size) || 50,
     color: (styles.Play && styles.Play.iconColor) || theme.control.iconColor
