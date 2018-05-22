@@ -72,7 +72,7 @@ class Play extends Component {
           {this.renderIcon()}
         </CircularButton>
         <View style={{height: 30}}>
-          <Spinner isVisible={buffering} size={30} type='ThreeBounce' color={styles.Play.bufferingColor || '#ffffff'} />
+          <Spinner isVisible={buffering} size={30} type='ThreeBounce' color={styles.Play && styles.Play.bufferingColor || '#ffffff'} />
         </View>
       </View>
     )
