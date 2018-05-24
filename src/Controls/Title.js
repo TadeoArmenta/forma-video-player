@@ -31,7 +31,8 @@ export const Connected = connectVideo(['name'])(Title)
 export const Styled = styles((styles, theme) => ({
   container: {
     backgroundColor: (styles.Title && styles.Title.backgroundColor) || theme.control.backgroundColor,
-    paddingHorizontal: 5
+    paddingHorizontal: 5,
+    paddingVertical: 5
   },
   text: {
     fontSize: (styles.Title && styles.Title.fontSize) || 20,
