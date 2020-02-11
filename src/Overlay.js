@@ -20,6 +20,12 @@ export default class Overlay extends Component {
       displayDuration: props.displayDuration || 3000,
       visible: props.forceVisible ? true : false
     }
+    this._panResponder = PanResponder.create({
+      onStartShouldSetPanResponderCapture: (evt) => {
+        this.tapped()
+        return false
+      }
+    });
   }
 
   tapped() {
@@ -60,14 +66,9 @@ export default class Overlay extends Component {
     }
   }
 
-  componentWillMount () {
-    this._panResponder = PanResponder.create({
-      onStartShouldSetPanResponderCapture: (evt) => {
-        this.tapped()
-        return false
-      }
-    });
-  }
+  // componentWillMount () {
+    
+  // }
 
   componentWillReceiveProps(nextProps) {
     if(nextProps.forceVisible === true && this.props.forceVisible === false) {

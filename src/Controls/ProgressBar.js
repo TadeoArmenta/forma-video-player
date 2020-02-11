@@ -3,7 +3,7 @@ import {
   View,
   Text
 } from 'react-native';
-import Slider from 'react-native-slider'
+import Slider from '@react-native-community/slider'
 
 import {connectVideo} from '../connectVideo'
 import {actions} from '../state'
