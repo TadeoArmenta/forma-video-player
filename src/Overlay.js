@@ -70,7 +70,7 @@ export default class Overlay extends Component {
     
   // }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if(nextProps.forceVisible === true && this.props.forceVisible === false) {
       Animated.timing(
         this.state.fadeAnim,

@@ -38,7 +38,7 @@ export class Player extends Component {
 
 
 
-  componentWillReceiveProps(newProps) {
+  UNSAFE_componentWillReceiveProps(newProps) {
     propsToWatch.forEach((prop) => {
       if((typeof newProps[prop] != 'undefined') && newProps[prop] != this.props.player[prop]) {
         this.props.actions[prop](newProps[prop])
