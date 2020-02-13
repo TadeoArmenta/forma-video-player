@@ -18,7 +18,7 @@ export class PlayerControls extends Component {
   }
 
   render() {
-    const {Header, Body, Footer} = this.props.layout
+    const {Header, Body, Footer, FloatBar} = this.props.layout
     const {container, progressBar} = this.props.styles
 
     return (
@@ -26,6 +26,7 @@ export class PlayerControls extends Component {
         {Body}
         {Header}
         {Footer}
+        {FloatBar}
         <View style={progressBar}>
           <ProgressBar />
         </View>
@@ -45,7 +46,8 @@ PlayerControls.defaultStyles = {
 export const LayoutWrapped = layout({
   Header: <Header />,
   Body: <Body />,
-  Footer: <Footer />
+  Footer: <Footer />,
+  FloatBar: null,
 })(PlayerControls)
 
 export const Styled = styles((styles, theme) => ({

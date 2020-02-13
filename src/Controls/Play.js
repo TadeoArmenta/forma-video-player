@@ -63,7 +63,7 @@ class Play extends Component {
 
   render() {
     const {paused, ended, buffering} = this.props.player
-    const {container, button, underlayColor, icon} = this.props.styles
+    const {container, button, underlayColor, icon, bufferingColor} = this.props.styles
 
 
     return (
@@ -72,7 +72,7 @@ class Play extends Component {
           {this.renderIcon()}
         </CircularButton>
         <View style={{height: 30}}>
-          <Spinner isVisible={buffering} size={30} type='ThreeBounce' color='#ffffff' />
+          <Spinner isVisible={buffering} size={30} type='ThreeBounce' color={bufferingColor} />
         </View>
       </View>
     )
@@ -90,18 +90,21 @@ export const Styled = styles((styles, theme) => ({
   button: {
     padding: 5,
     margin: 5,
-    backgroundColor: styles.Play.buttonColor || 'transparent'
+    backgroundColor: (styles.Play && styles.Play.buttonColor) || 'transparent',
+    borderWidth: (styles.Play && styles.Play.buttonBorderWidth) || 0,
+    borderColor: (styles.Play && styles.Play.buttonBorderColor) || 'transparent',
   },
   container: {
-    backgroundColor: styles.Play.backgroundColor || theme.control.backgroundColor,
+    backgroundColor: (styles.Play && styles.Play.backgroundColor) || theme.control.backgroundColor,
     paddingTop: 30,
     justifyContent: 'center',
     alignItems: 'center'
   },
-  underlayColor: styles.Play.underlayColor || theme.control.underlayColor,
+  underlayColor: (styles.Play && styles.Play.underlayColor) || theme.control.underlayColor,
+  bufferingColor: (styles.Play && styles.Play.bufferingColor) || '#ffffff',
   icon: {
-    size: styles.Play.size || 50,
-    color: styles.Play.iconColor || theme.control.iconColor
+    size: (styles.Play && styles.Play.size) || 50,
+    color: (styles.Play && styles.Play.iconColor) || theme.control.iconColor
   }
 }))(Connected)
 

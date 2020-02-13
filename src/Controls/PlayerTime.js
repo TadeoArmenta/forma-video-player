@@ -53,13 +53,13 @@ export const Connected = connectVideo(['currentTime', 'duration'])(PlayerTime)
 
 export const Styled = styles((styles, theme) => ({
   container: {
-    backgroundColor: styles.PlayerTime.backgroundColor || theme.control.backgroundColor,
+    backgroundColor: (styles.PlayerTime && styles.PlayerTime.backgroundColor) || theme.control.backgroundColor,
     margin: 5,
     flexDirection: 'row'
   },
   text: {
-    size: styles.PlayerTime.fontSize || theme.control.fontSize,
-    color: styles.PlayerTime.textColor || theme.control.textColor
+    size: (styles.PlayerTime && styles.PlayerTime.fontSize) || theme.control.fontSize,
+    color: (styles.PlayerTime && styles.PlayerTime.textColor) || theme.control.textColor
   }
 }))(Connected)
 

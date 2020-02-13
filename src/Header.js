@@ -57,14 +57,14 @@ const Layout = layout({
 
 const Styled = styles((styles, theme) => ({
   container: {
-    backgroundColor: styles.Header.backgroundColor || 'transparent',
+    backgroundColor: (styles.Header && styles.Header.backgroundColor) || 'transparent',
     justifyContent: 'space-between',
     flexDirection: 'row',
     position: 'absolute',
-    top: 0,
-    right: 0,
-    left: 0,
-    height: 50
+    top: (styles.Header && styles.Header.top) || 0,
+    right: (styles.Header && styles.Header.right) || 0,
+    left: (styles.Header && styles.Header.left) || 0,
+    height: (styles.Header && styles.Header.height) || 50
   }
 }))(Layout)
 
